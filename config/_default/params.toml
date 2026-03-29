@@ -101,8 +101,8 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"     # Forgejo 托管服务
   layoutBackgroundHeaderSpace = true
   showBreadcrumbs = false                 # 列表页是否显示面包屑导航
   showSummary = false                     # 文章列表中是否除了标题外，还显示一小段文章摘要
-  showViews = false
-  showLikes = false
+  showViews = true
+  showLikes = true
   showTableOfContents = false
   showCards = false                       # 列表页的文章是否以卡片形式展示
   orderByWeight = false                   # 列表是否按照 front matter 里的 weight 值进行强制排序（而非按时间倒序）
@@ -137,14 +137,14 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"     # Forgejo 托管服务
 
 # -- 下方全都是各类第三方扩展服务的 API 密钥与配置区域 --
 
-[firebase] # Google Firebase 数据库配置（用于记录文章阅读量和点赞数）
-  # apiKey = "XXXXXX"
-  # authDomain = "XXXXXX"
-  # projectId = "XXXXXX"
-  # storageBucket = "XXXXXX"
-  # messagingSenderId = "XXXXXX"
-  # appId = "XXXXXX"
-  # measurementId = "XXXXXX"
+[firebase]
+  apiKey = "AIzaSyA6AHWwoWq8bEHR9dDZo8-LBNEAVisN_Ik"
+  authDomain = "mrliu1024-aa112.firebaseapp.com"
+  projectId = "mrliu1024-aa112"
+  storageBucket = "mrliu1024-aa112.firebasestorage.app"
+  messagingSenderId = "685804975968"
+  appId = "1:685804975968:web:7c7361978fa96bcd629005"
+  measurementId = "G-DQCYP69G08"
 
 [fathomAnalytics] # Fathom 网站流量分析统计（轻量且注重隐私的 GA 替代品）
   # site = "ABC12345"
