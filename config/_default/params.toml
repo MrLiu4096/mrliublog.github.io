@@ -1,0 +1,183 @@
+# -- 主题选项 (Theme Options) --
+# 这些选项控制主题的运行方式，并允许你自定义网站的显示效果。
+#
+# 更多关于这些参数的详细信息，请参考主题官方文档：
+# https://blowfish.page/docs/configuration/#theme-parameters
+
+colorScheme = "github"               # 网站的整体颜色方案（内置了多种配色如 slate, zen, neon 等）
+defaultAppearance = "light"         # 默认外观模式。有效选项：light (浅色模式) 或 dark (深色模式)
+autoSwitchAppearance = true         # 是否允许根据用户的操作系统设置，自动在深色/浅色模式之间切换
+
+enableA11y = false                  # 是否启用无障碍辅助功能（如支持屏幕阅读器）
+enableSearch = true                 # 是否启用全局站内搜索功能（依赖上文 outputs 中开启的 JSON）
+enableCodeCopy = true               # 是否在代码块右上角显示“复制代码”按钮
+enableStructuredBreadcrumbs = true  # 是否启用结构化面包屑数据（有助于谷歌等搜索引擎理解网站层级）
+# enableStyledScrollbar = true      # 是否启用主题自定义的滚动条样式。取消注释并设为 false 则使用浏览器原生的滚动条样式（默认为 true）
+
+replyByEmail = false                # 是否在文章末尾显示“通过邮件回复”的链接
+
+# mainSections = ["section1", "section2"]       # 定义哪些文件夹属于网站的“主要内容区”（用于主页的文章过滤）
+# robots = ""                                   # 自定义全局的 robots meta 标签（例如 "noindex, nofollow" 阻止搜索引擎抓取）
+
+disableImageOptimization = false                # 是否禁用 Hugo 的自动图片优化功能
+disableImageOptimizationMD = false              # 是否禁用 Markdown 文件中的图片自动优化
+disableTextInHeader = false                     # 是否在顶部导航栏隐藏网站文字标题（如果你只想显示 Logo 图片，可以设为 true）
+# backgroundImageWidth = 1200                   # 自动处理背景图片时的默认缩放宽度
+
+defaultBackgroundImage = "img/background-light.webp"      # 全局默认背景图片（当某页面没有单独设置时使用）
+defaultFeaturedImage = "img/background-dark.webp"         # 全局默认特色图片（当文章没有设置头图时使用）
+# defaultSocialImage = "/android-chrome-512x512.png"      # 在微信、Twitter、TG 等社交媒体分享链接时，默认抓取的预览图
+hotlinkFeatureImage = false                               # 是否允许直接使用外部链接作为特色图片（防盗链机制）
+# imagePosition = "50% 50%"                               # 裁剪图片时的默认锚点/对齐位置（50% 50% 表示居中对齐）
+
+# highlightCurrentMenuArea = true                         # 是否在顶部导航栏高亮显示当前所在的菜单项
+smartTOC = true                                           # 开启智能目录（当页面向下滚动时，目录会自动高亮当前正在阅读的章节）
+smartTOCHideUnfocusedChildren = true                      # 智能目录高级选项：是否隐藏非当前阅读范围内的子目录，让侧边栏更清爽
+
+fingerprintAlgorithm = "sha512"                           # 静态资源指纹加密算法。有效值："sha512" (默认), "sha384", "sha256"
+
+giteaDefaultServer = "https://git.fsfe.org"               # Gitea 托管服务的默认地址
+forgejoDefaultServer = "https://v11.next.forgejo.org"     # Forgejo 托管服务的默认地址
+
+[header]                                  # -- 顶部导航栏设置 --
+  layout = "fixed-fill-blur"              # 导航栏布局。有效选项：basic (普通随页面滚动), fixed (固定在顶部), fixed-fill (固定并带背景色), fixed-gradient (固定且渐变), fixed-fill-blur (固定且带有类似苹果的毛玻璃模糊特效)
+
+[footer]                                  # -- 页脚设置 --
+  showMenu = true                         # 是否在页脚显示底部菜单
+  showCopyright = true                    # 是否显示版权声明（如 © 2026）
+  showThemeAttribution = true             # 是否显示 "Powered by Blowfish" 的主题归属信息
+  showAppearanceSwitcher = true           # 是否在页脚显示“深/浅色模式”的切换按钮
+  showScrollToTop = true                  # 是否在页面右下角显示“回到顶部”的悬浮按钮
+
+[homepage]                                # -- 博客主页设置 --
+  layout = "background"                         # 主页排版模式。有效选项：page (普通), profile (个人名片卡，类似 Stack), hero (巨幕介绍), card (文章卡片瀑布流), background (全屏背景图), custom (完全自定义)
+  homepageImage = "img/background-light.webp"    # 主页的大图（当布局设为 hero 或 card 时生效）
+  showRecent = true                       # 是否在主页展示最新文章列表
+  showRecentItems = 10                    # 如果将 showRecent 设置为 true，此参数用于显示多少篇文章，如果没有设置或者为0，则默认显示5篇文章。
+  showMoreLink = false                    # 是否在主页底部添加“显示更多”，该链接会降会用带到一个预定义位置
+  showMoreLinkDest = "/posts/"            # 更多按钮所指向的位置
+  cardView = false                        # 将列表展示为卡片容器
+  cardViewScreenWidth = false             # 增强列表中卡片的宽度，使其可以占据可用的全部宽度
+  layoutBackgroundBlur = false            # 向下滚动主页时，是否模糊背景图
+  disableHeroImageFilter = false          # 主页背景是否套用图片滤镜
+
+[article]                                 # -- 单篇文章内页设置 --
+  showDate = true                         # 是否在标题下方显示发布日期
+  showViews = false                       # 是否显示阅读次数（需配合第三方平台如 Firebase）
+  showLikes = false                       # 是否显示点赞数
+  showDateOnlyInArticle = false           # 是否仅在文章详情内显示日期（在外部卡片列表中不显示日期）
+  showDateUpdated = false                 # 如果文章被修改过，是否显示最后更新的日期
+  showAuthor = false                      # 是否显示作者名字
+  # showAuthorBottom = false              # 是否将作者信息卡片放在文章正文的最下方
+  showHero = true                         # 单篇文章是否在顶部显示宽幅横幅大图（Hero Image）
+  heroStyle = "background"                # 巨幕风格。有效选项：basic, big, background, thumbAndBackground
+  layoutBackgroundBlur = true             # 巨幕图是否带毛玻璃模糊效果
+  layoutBackgroundHeaderSpace = true      # 是否为导航栏预留透明空间，避免图片被顶栏遮挡
+  showBreadcrumbs = true                  # 文章开头是否显示面包屑导航（如：首页 > 技术 > 本文）
+  showDraftLabel = true                   # 如果文章是草稿（draft: true），是否显示明显的“草稿”提示徽章
+  showEdit = false                        # 是否在文章里显示“在 GitHub 上编辑此页”的入口
+  # editURL = "https://github.com/username/repo/"       # 编辑功能的底层 GitHub 仓库地址
+  editAppendPath = true                   # 是否自动将当前页面的相对路径附加到 editURL 后面
+  seriesOpened = false                    # 当文章属于某个系列连载时，顶部的系列文章列表默认是展开还是折叠的
+  showHeadingAnchors = true               # 是否在文章内的 H2/H3 标题左侧显示锚点链接（鼠标悬停时出现 `#` 号）
+  showPagination = true                   # 是否在文章最下方显示“上一篇 / 下一篇”的导航按钮
+  invertPagination = false                # 是否颠倒“上一篇 / 下一篇”的左右位置
+  showReadingTime = true                  # 是否显示预计阅读所需时间
+  showTableOfContents = true              # 是否显示文章目录 (TOC)。如果设为 true，宽屏下通常会在文章右侧形成第三栏
+  # showRelatedContent = false            # 是否在文章末尾推荐相关文章
+  # relatedContentLimit = 3               # 推荐相关文章的最大篇数
+  showTaxonomies = false                  # 是否显示标签和分类等所有归类徽章（与下方的选项二选一）
+  showCategoryOnly = false                # 是否强制只显示分类（隐藏标签等），保持页面简洁
+  showAuthorsBadges = false               # 是否在作者名字旁显示专属徽章图案
+  showWordCount = true                    # 是否显示文章总字数
+  # sharingLinks = [ "linkedin", "twitter", "bluesky", "mastodon", "reddit", "pinterest", "facebook", "email", "whatsapp", "telegram", "line"] # 启用的社交平台分享按钮列表
+  showZenMode = false                     # 是否启用“禅模式”（一种无干扰的沉浸式纯粹阅读排版）
+  # externalLinkForceNewTab = false       # 外链是否强制在新标签页打开。默认值为 true，取消注释并设为 false 则在当前页跳转
+
+[list] # -- 列表归档页设置（适用于分类列表、标签列表等页面） --
+  showHero = true                         # 列表页顶部是否显示巨幕图片
+  # heroStyle = "background"              # 列表页巨幕图样式
+  layoutBackgroundBlur = true
+  layoutBackgroundHeaderSpace = true
+  showBreadcrumbs = false                 # 列表页是否显示面包屑导航
+  showSummary = false                     # 文章列表中是否除了标题外，还显示一小段文章摘要
+  showViews = false
+  showLikes = false
+  showTableOfContents = false
+  showCards = false                       # 列表页的文章是否以卡片形式展示
+  orderByWeight = false                   # 列表是否按照 front matter 里的 weight 值进行强制排序（而非按时间倒序）
+  groupByYear = true                      # 文章归档列表是否按“年份”进行视觉分组
+  cardView = false                        # 强制启用卡片视图模式
+  cardViewScreenWidth = false
+  constrainItemsWidth = false             # 是否限制列表容器的最大宽度
+
+[sitemap]
+  excludedKinds = ["taxonomy", "term"]    # 在生成的 sitemap.xml 站点地图中，排除掉没内容的分类页，有利于优化 SEO 权重
+
+[taxonomy] # -- 分类法的整体汇总页（如 /tags/ 或 /categories/） --
+  showTermCount = true                    # 在标签云或分类列表中，是否在名称旁显示该分类下有多少篇文章的数字统计
+  showHero = false
+  # heroStyle = "background"
+  showBreadcrumbs = false
+  showViews = false
+  showLikes = false
+  showTableOfContents = false
+  cardView = false
+
+[term] # -- 具体的分类页面（如 /tags/摄影/） --
+  showHero = false
+  # heroStyle = "background"
+  showBreadcrumbs = false
+  showViews = false
+  showLikes = false
+  showTableOfContents = true
+  groupByYear = false
+  cardView = false
+  cardViewScreenWidth = false
+
+# -- 下方全都是各类第三方扩展服务的 API 密钥与配置区域 --
+
+[firebase] # Google Firebase 数据库配置（用于记录文章阅读量和点赞数）
+  # apiKey = "XXXXXX"
+  # authDomain = "XXXXXX"
+  # projectId = "XXXXXX"
+  # storageBucket = "XXXXXX"
+  # messagingSenderId = "XXXXXX"
+  # appId = "XXXXXX"
+  # measurementId = "XXXXXX"
+
+[fathomAnalytics] # Fathom 网站流量分析统计（轻量且注重隐私的 GA 替代品）
+  # site = "ABC12345"
+  # domain = "llama.yoursite.com"
+
+[umamiAnalytics] # Umami 开源网站流量统计工具配置
+  # websiteid = "ABC12345"
+  # domain = "llama.yoursite.com"
+  # dataDomains = "yoursite.com,yoursite2.com"
+  # scriptName = ""
+  # enableTrackEvent = true
+
+[selineAnalytics] # Seline 分析工具配置
+  # token = "XXXXXX"
+  # enableTrackEvent = true
+
+[buymeacoffee] # “请我喝杯咖啡”赞赏打赏功能组件
+  # identifier = "" # 你的赞助 ID
+  # globalWidget = true # 是否在全站右下角显示一个悬浮的打赏按钮
+  # globalWidgetMessage = "Hello" # 打赏按钮旁边的提示文字
+  # globalWidgetColor = "#FFDD00" # 按钮颜色
+  # globalWidgetPosition = "right" # 按钮位置
+
+[verification] # 搜索引擎的站点所有权验证 Meta 标签（用于 Google Search Console 等）
+  # google = ""
+  # bing = ""
+  # pinterest = ""
+  # yandex = ""
+  # fediverse = ""
+
+[rssnext] # RSS 输出相关的用户和 Feed ID 配置
+  # feedId = ""
+  # userId = ""
+
+[advertisement] # 广告投放配置
+  # adsense = "" # 如果你想在博客里挂 Google AdSense 赚取广告费，把你的发布商 ID 填在这

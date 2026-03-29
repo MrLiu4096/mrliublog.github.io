@@ -1,0 +1,71 @@
+# -- 站点配置 --
+# 更多关于这些参数的详细信息，请参考 Blowfish 主题官方文档：
+# https://blowfish.page/docs/getting-started/
+
+theme = "blowfish"                            # 启用的主题名称
+baseURL = "https://www.mrliu1024.top/"       # 你的博客绑定的正式域名
+defaultContentLanguage = "zh-cn"              # 默认语言设为简体中文，确保主题界面文本（如日期、提示语）显示为中文
+
+pluralizeListTitles = "false"                 # 强烈建议中文博客设为false。Hugo的列表标题复数化功能，设为true会导致Hugo强行给中文分类加英文复数后缀。详细了解：https://gohugo.io/getting-started/configuration/#pluralizelisttitles
+hasCJKLanguage = true                         # 中文支持
+
+enableRobotsTXT = true                        # 自动生成robots.txt，允许搜索引擎抓取你的站点
+summaryLength = 0                             # 自动摘要长度。设为0表示不自动截断，推荐在写Markdown时手动用标签来控制摘要显示范围
+
+buildDrafts = false                           # 是否编译输出草稿（draft: true 的文章）。正式部署上线时必须为 false
+buildFuture = false                           # 是否编译输出发布时间在未来的文章（设为 false 可配合实现“定时发布”功能）
+
+enableEmoji = true                            # 开启原生 Emoji 表情支持
+
+googleAnalytics = "G-NYV16QDS0Y"              # 谷歌分析的追踪 ID，用于统计网站访问量，填入你的 ID 即可启用
+
+[pagination]
+  pagerSize = 50                              # 列表页（主页、归档页）每页显示的文章数量限制
+
+[imaging]
+  anchor = 'Center'                           # 自动裁剪或缩放图片时，保留图片的“中心”部分
+
+[taxonomies]                                  # 启用的分类法体系
+  tag = "tags"                                # 启用标签
+  category = "categories"                     # 启用分类
+  author = "authors"                          # 启用作者归属
+  series = "series"                           # 启用系列连载
+
+[sitemap]                                     # 站点地图配置，利于 SEO（搜索引擎优化）
+  changefreq = 'daily'                        # 页面更新频率声明：每天更新
+  filename = 'sitemap.xml'                    # 生成的站点地图文件名
+  priority = 0.5                              # 默认抓取权重
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]              # 首页生成的输出格式。其中 JSON 是 Blowfish 实现全局站内搜索必须要有的底层索引文件
+
+[related]                                     # 猜你喜欢 / 相关文章推荐的匹配规则
+  threshold = 0                               # 匹配阈值。0 表示只要有一项符合就会被推荐。如果想要推荐更精确，可以适当调高此数值
+  toLower = false                             # 在比较分类或标签关键词时，是否先统一转换为小写
+
+    # 以下为匹配条件的权重（weight），数值越高，代表在计算相关性时越看重该指标
+    [[related.indices]]
+        name = "tags"         # 标签相同的文章高度相关
+        weight = 100
+
+    [[related.indices]]
+        name = "categories"   # 分类相同的文章高度相关
+        weight = 100
+
+    [[related.indices]]
+        name = "series"       # 同一个系列的文章较强相关
+        weight = 50
+
+    [[related.indices]]
+        name = "authors"      # 同一个作者的文章有一定相关性
+        weight = 20
+
+    [[related.indices]]
+        name = "date"         # 发布日期相近的文章有轻微相关性
+        weight = 10
+
+    [[related.indices]]
+      applyFilter = false
+      name = 'fragmentrefs'
+      type = 'fragments'
+      weight = 10             # 基于文章片段引用的匹配权重
