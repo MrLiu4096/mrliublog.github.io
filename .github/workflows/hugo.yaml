@@ -5,9 +5,7 @@ on:
     branches: ["main"]
   workflow_dispatch:
 
-# 解决 Node.js 20 弃用警告
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+# --- 优化点 1：移除 FORCE_JAVASCRIPT_ACTIONS_TO_NODE24，避免触发“强制运行”警告 ---
 
 permissions:
   contents: read
@@ -23,7 +21,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v4 # 在 2026 年，请确保你的本地 git 有更新过这些 tag
         with:
           submodules: recursive
           fetch-depth: 0
@@ -38,6 +36,7 @@ jobs:
         run: hugo --minify
 
       - name: Upload artifact
+        # 此时可以用 v3，它通常会向下兼容，只要不强推 Node 24 警告就会减弱
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
@@ -51,9 +50,9 @@ jobs:
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4 # 检查是否有 v5 发布，如有可升级
 
       - name: IndexNow Snippet
         run: |
-          # 使用 -i 显示 HTTP 状态码，这样成功还是失败一目了然
+          # 200 OK 就代表成功，无视提示音
           curl -ki "https://www.bing.com/indexnow?url=https://www.mrliu1024.top/&key=0723c3e47cd74fe99dfbe1a4ac243e97"
