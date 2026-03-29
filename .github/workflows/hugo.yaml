@@ -53,7 +53,7 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
-      # 这一步要在部署完成后执行
       - name: IndexNow Snippet
         run: |
-          curl -k "https://www.bing.com/indexnow?url=https://www.mrliu1024.top/&key=0723c3e47cd74fe99dfbe1a4ac243e97"
+          # 使用 -i 显示 HTTP 状态码，这样成功还是失败一目了然
+          curl -ki "https://www.bing.com/indexnow?url=https://www.mrliu1024.top/&key=0723c3e47cd74fe99dfbe1a4ac243e97"
