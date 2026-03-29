@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>教程 on Mr Liu的博客</title>
+    <link>https://www.mrliu1024.top/categories/%E6%95%99%E7%A8%8B/</link>
+    <description>Recent content in 教程 on Mr Liu的博客</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <copyright>© 2023 - 2026 [Mr Liu](/about/)</copyright>
+    <lastBuildDate>Sat, 28 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.mrliu1024.top/categories/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Chromebook刷Windows后安装声卡驱动</title>
+      <link>https://www.mrliu1024.top/posts/chromebook-audio-driver-on-windows/</link>
+      <pubDate>Sat, 28 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mrliu1024.top/posts/chromebook-audio-driver-on-windows/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://www.mrliu1024.top/posts/chromebook-audio-driver-on-windows/feature-oundcard_installed.webp" />
+    </item>
+    
+    <item>
+      <title>SDR软件无线电之ADS-B信号接收与上传至飞常准教程</title>
+      <link>https://www.mrliu1024.top/posts/sdr-adsb-feeyo/</link>
+      <pubDate>Tue, 17 Dec 2024 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mrliu1024.top/posts/sdr-adsb-feeyo/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://www.mrliu1024.top/posts/sdr-adsb-feeyo/feature-sdr-adsb-feeyo-success.webp" />
+    </item>
+    
+    <item>
+      <title>泉盛UV-K5刷固件教程</title>
+      <link>https://www.mrliu1024.top/posts/quansheng-uv-k5-firmware-flash/</link>
+      <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mrliu1024.top/posts/quansheng-uv-k5-firmware-flash/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://www.mrliu1024.top/posts/quansheng-uv-k5-firmware-flash/feature-quansheng-uv-k5.png" />
+    </item>
+    
+    <item>
+      <title>Klipper教程——自动调平：Euclid Probe组装和配置</title>
+      <link>https://www.mrliu1024.top/posts/euclid-probe-auto-leveling/</link>
+      <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.mrliu1024.top/posts/euclid-probe-auto-leveling/</guid>
+      <description></description>
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://www.mrliu1024.top/posts/euclid-probe-auto-leveling/feature-euclid-probe.webp" />
+    </item>
+    
+  </channel>
+</rss>

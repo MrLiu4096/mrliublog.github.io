@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.mrliu1024.top/sitemap.xml
