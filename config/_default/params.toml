@@ -181,3 +181,8 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"     # Forgejo 托管服务
 
 [advertisement] # 广告投放配置
   # adsense = "" # 如果你想在博客里挂 Google AdSense 赚取广告费，把你的发布商 ID 填在这
+
+  # git命令
+  # git add .
+  # git commit -m "turn off likes"
+  # git push origin main
