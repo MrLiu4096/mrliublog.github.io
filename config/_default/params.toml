@@ -63,8 +63,8 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"     # Forgejo 托管服务
 
 [article]                                 # -- 单篇文章内页设置 --
   showDate = true                         # 是否在标题下方显示发布日期
-  showViews = false                       # 是否显示阅读次数（需配合第三方平台如 Firebase）
-  showLikes = false                       # 是否显示点赞数
+  showViews = true                        # 是否显示阅读次数（需配合第三方平台如 Firebase）
+  showLikes = true                        # 是否显示点赞数
   showDateOnlyInArticle = false           # 是否仅在文章详情内显示日期（在外部卡片列表中不显示日期）
   showDateUpdated = false                 # 如果文章被修改过，是否显示最后更新的日期
   showAuthor = false                      # 是否显示作者名字
@@ -101,8 +101,8 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"     # Forgejo 托管服务
   layoutBackgroundHeaderSpace = true
   showBreadcrumbs = false                 # 列表页是否显示面包屑导航
   showSummary = false                     # 文章列表中是否除了标题外，还显示一小段文章摘要
-  showViews = true
-  showLikes = true
+  showViews = false
+  showLikes = false
   showTableOfContents = false
   showCards = false                       # 列表页的文章是否以卡片形式展示
   orderByWeight = false                   # 列表是否按照 front matter 里的 weight 值进行强制排序（而非按时间倒序）
