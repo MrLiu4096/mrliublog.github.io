@@ -2,229 +2,229 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Mr Liu的博客</title>
-    <link>https://www.mrliu1024.top/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on Mr Liu的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2023 - 2026 [Mr Liu](/about/)</copyright>
-    <lastBuildDate>Tue, 10 Mar 2026 10:00:00 +0800</lastBuildDate><atom:link href="https://www.mrliu1024.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Mar 2026 10:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Blowfish</title>
-      <link>https://www.mrliu1024.top/tags/blowfish/</link>
+      <link>http://localhost:1313/tags/blowfish/</link>
       <pubDate>Tue, 10 Mar 2026 10:00:00 +0800</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/blowfish/</guid>
+      <guid>http://localhost:1313/tags/blowfish/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Hugo</title>
-      <link>https://www.mrliu1024.top/tags/hugo/</link>
+      <link>http://localhost:1313/tags/hugo/</link>
       <pubDate>Tue, 10 Mar 2026 10:00:00 +0800</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/hugo/</guid>
+      <guid>http://localhost:1313/tags/hugo/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>折腾</title>
-      <link>https://www.mrliu1024.top/tags/%E6%8A%98%E8%85%BE/</link>
+      <link>http://localhost:1313/tags/%E6%8A%98%E8%85%BE/</link>
       <pubDate>Tue, 10 Mar 2026 10:00:00 +0800</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/%E6%8A%98%E8%85%BE/</guid>
+      <guid>http://localhost:1313/tags/%E6%8A%98%E8%85%BE/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Chromebook</title>
-      <link>https://www.mrliu1024.top/tags/chromebook/</link>
+      <link>http://localhost:1313/tags/chromebook/</link>
       <pubDate>Sat, 28 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/chromebook/</guid>
+      <guid>http://localhost:1313/tags/chromebook/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Windows</title>
-      <link>https://www.mrliu1024.top/tags/windows/</link>
+      <link>http://localhost:1313/tags/windows/</link>
       <pubDate>Sat, 28 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/windows/</guid>
+      <guid>http://localhost:1313/tags/windows/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>驱动</title>
-      <link>https://www.mrliu1024.top/tags/%E9%A9%B1%E5%8A%A8/</link>
+      <link>http://localhost:1313/tags/%E9%A9%B1%E5%8A%A8/</link>
       <pubDate>Sat, 28 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/%E9%A9%B1%E5%8A%A8/</guid>
+      <guid>http://localhost:1313/tags/%E9%A9%B1%E5%8A%A8/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>ADS-B</title>
-      <link>https://www.mrliu1024.top/tags/ads-b/</link>
+      <link>http://localhost:1313/tags/ads-b/</link>
       <pubDate>Tue, 17 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/ads-b/</guid>
+      <guid>http://localhost:1313/tags/ads-b/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Docker</title>
-      <link>https://www.mrliu1024.top/tags/docker/</link>
+      <link>http://localhost:1313/tags/docker/</link>
       <pubDate>Tue, 17 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/docker/</guid>
+      <guid>http://localhost:1313/tags/docker/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>SDR</title>
-      <link>https://www.mrliu1024.top/tags/sdr/</link>
+      <link>http://localhost:1313/tags/sdr/</link>
       <pubDate>Tue, 17 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/sdr/</guid>
+      <guid>http://localhost:1313/tags/sdr/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>飞常准</title>
-      <link>https://www.mrliu1024.top/tags/%E9%A3%9E%E5%B8%B8%E5%87%86/</link>
+      <link>http://localhost:1313/tags/%E9%A3%9E%E5%B8%B8%E5%87%86/</link>
       <pubDate>Tue, 17 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/%E9%A3%9E%E5%B8%B8%E5%87%86/</guid>
+      <guid>http://localhost:1313/tags/%E9%A3%9E%E5%B8%B8%E5%87%86/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Quansheng</title>
-      <link>https://www.mrliu1024.top/tags/quansheng/</link>
+      <link>http://localhost:1313/tags/quansheng/</link>
       <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/quansheng/</guid>
+      <guid>http://localhost:1313/tags/quansheng/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>对讲机刷机</title>
-      <link>https://www.mrliu1024.top/tags/%E5%AF%B9%E8%AE%B2%E6%9C%BA%E5%88%B7%E6%9C%BA/</link>
+      <link>http://localhost:1313/tags/%E5%AF%B9%E8%AE%B2%E6%9C%BA%E5%88%B7%E6%9C%BA/</link>
       <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/%E5%AF%B9%E8%AE%B2%E6%9C%BA%E5%88%B7%E6%9C%BA/</guid>
+      <guid>http://localhost:1313/tags/%E5%AF%B9%E8%AE%B2%E6%9C%BA%E5%88%B7%E6%9C%BA/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>泉盛UV-K5</title>
-      <link>https://www.mrliu1024.top/tags/%E6%B3%89%E7%9B%9Buv-k5/</link>
+      <link>http://localhost:1313/tags/%E6%B3%89%E7%9B%9Buv-k5/</link>
       <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/%E6%B3%89%E7%9B%9Buv-k5/</guid>
+      <guid>http://localhost:1313/tags/%E6%B3%89%E7%9B%9Buv-k5/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>手台</title>
-      <link>https://www.mrliu1024.top/tags/%E6%89%8B%E5%8F%B0/</link>
+      <link>http://localhost:1313/tags/%E6%89%8B%E5%8F%B0/</link>
       <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/%E6%89%8B%E5%8F%B0/</guid>
+      <guid>http://localhost:1313/tags/%E6%89%8B%E5%8F%B0/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>自定义固件</title>
-      <link>https://www.mrliu1024.top/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BA%E4%BB%B6/</link>
+      <link>http://localhost:1313/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BA%E4%BB%B6/</link>
       <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BA%E4%BB%B6/</guid>
+      <guid>http://localhost:1313/tags/%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9B%BA%E4%BB%B6/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Euclid Probe</title>
-      <link>https://www.mrliu1024.top/tags/euclid-probe/</link>
+      <link>http://localhost:1313/tags/euclid-probe/</link>
       <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/euclid-probe/</guid>
+      <guid>http://localhost:1313/tags/euclid-probe/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Klipper</title>
-      <link>https://www.mrliu1024.top/tags/klipper/</link>
+      <link>http://localhost:1313/tags/klipper/</link>
       <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/klipper/</guid>
+      <guid>http://localhost:1313/tags/klipper/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>教程</title>
-      <link>https://www.mrliu1024.top/tags/%E6%95%99%E7%A8%8B/</link>
+      <link>http://localhost:1313/tags/%E6%95%99%E7%A8%8B/</link>
       <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/%E6%95%99%E7%A8%8B/</guid>
+      <guid>http://localhost:1313/tags/%E6%95%99%E7%A8%8B/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>自动调平</title>
-      <link>https://www.mrliu1024.top/tags/%E8%87%AA%E5%8A%A8%E8%B0%83%E5%B9%B3/</link>
+      <link>http://localhost:1313/tags/%E8%87%AA%E5%8A%A8%E8%B0%83%E5%B9%B3/</link>
       <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/%E8%87%AA%E5%8A%A8%E8%B0%83%E5%B9%B3/</guid>
+      <guid>http://localhost:1313/tags/%E8%87%AA%E5%8A%A8%E8%B0%83%E5%B9%B3/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>阿里云</title>
-      <link>https://www.mrliu1024.top/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</link>
+      <link>http://localhost:1313/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</link>
       <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</guid>
+      <guid>http://localhost:1313/tags/%E9%98%BF%E9%87%8C%E4%BA%91/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>服务器</title>
-      <link>https://www.mrliu1024.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <link>http://localhost:1313/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
       <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <guid>http://localhost:1313/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>优惠</title>
-      <link>https://www.mrliu1024.top/tags/%E4%BC%98%E6%83%A0/</link>
+      <link>http://localhost:1313/tags/%E4%BC%98%E6%83%A0/</link>
       <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/tags/%E4%BC%98%E6%83%A0/</guid>
+      <guid>http://localhost:1313/tags/%E4%BC%98%E6%83%A0/</guid>
       <description></description>
       
     </item>

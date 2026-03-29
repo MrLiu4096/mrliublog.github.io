@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>折腾 on Mr Liu的博客</title>
-    <link>https://www.mrliu1024.top/tags/%E6%8A%98%E8%85%BE/</link>
+    <link>http://localhost:1313/tags/%E6%8A%98%E8%85%BE/</link>
     <description>Recent content in 折腾 on Mr Liu的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2023 - 2026 [Mr Liu](/about/)</copyright>
-    <lastBuildDate>Tue, 10 Mar 2026 10:00:00 +0800</lastBuildDate><atom:link href="https://www.mrliu1024.top/tags/%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 10 Mar 2026 10:00:00 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/%E6%8A%98%E8%85%BE/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>我的第一个网页</title>
-      <link>https://www.mrliu1024.top/posts/my-first-web/</link>
+      <link>http://localhost:1313/posts/my-first-web/</link>
       <pubDate>Tue, 10 Mar 2026 10:00:00 +0800</pubDate>
       
-      <guid>https://www.mrliu1024.top/posts/my-first-web/</guid>
+      <guid>http://localhost:1313/posts/my-first-web/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://www.mrliu1024.top/posts/my-first-web/feature-blowfish-hero.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/my-first-web/feature-blowfish-hero.png" />
     </item>
     
   </channel>

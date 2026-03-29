@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>驱动 on Mr Liu的博客</title>
-    <link>https://www.mrliu1024.top/tags/%E9%A9%B1%E5%8A%A8/</link>
+    <link>http://localhost:1313/tags/%E9%A9%B1%E5%8A%A8/</link>
     <description>Recent content in 驱动 on Mr Liu的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2023 - 2026 [Mr Liu](/about/)</copyright>
-    <lastBuildDate>Sat, 28 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.mrliu1024.top/tags/%E9%A9%B1%E5%8A%A8/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 28 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E9%A9%B1%E5%8A%A8/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Chromebook刷Windows后安装声卡驱动</title>
-      <link>https://www.mrliu1024.top/posts/chromebook-audio-driver-on-windows/</link>
+      <link>http://localhost:1313/posts/chromebook-audio-driver-on-windows/</link>
       <pubDate>Sat, 28 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/posts/chromebook-audio-driver-on-windows/</guid>
+      <guid>http://localhost:1313/posts/chromebook-audio-driver-on-windows/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://www.mrliu1024.top/posts/chromebook-audio-driver-on-windows/feature-oundcard_installed.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/chromebook-audio-driver-on-windows/feature-oundcard_installed.webp" />
     </item>
     
   </channel>

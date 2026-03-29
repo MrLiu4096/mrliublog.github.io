@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>泉盛UV-K5 on Mr Liu的博客</title>
-    <link>https://www.mrliu1024.top/tags/%E6%B3%89%E7%9B%9Buv-k5/</link>
+    <link>http://localhost:1313/tags/%E6%B3%89%E7%9B%9Buv-k5/</link>
     <description>Recent content in 泉盛UV-K5 on Mr Liu的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2023 - 2026 [Mr Liu](/about/)</copyright>
-    <lastBuildDate>Sat, 25 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.mrliu1024.top/tags/%E6%B3%89%E7%9B%9Buv-k5/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 25 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E6%B3%89%E7%9B%9Buv-k5/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>泉盛UV-K5刷固件教程</title>
-      <link>https://www.mrliu1024.top/posts/quansheng-uv-k5-firmware-flash/</link>
+      <link>http://localhost:1313/posts/quansheng-uv-k5-firmware-flash/</link>
       <pubDate>Sat, 25 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/posts/quansheng-uv-k5-firmware-flash/</guid>
+      <guid>http://localhost:1313/posts/quansheng-uv-k5-firmware-flash/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://www.mrliu1024.top/posts/quansheng-uv-k5-firmware-flash/feature-quansheng-uv-k5.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/quansheng-uv-k5-firmware-flash/feature-quansheng-uv-k5.png" />
     </item>
     
   </channel>

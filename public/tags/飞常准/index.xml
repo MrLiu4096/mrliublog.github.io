@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>飞常准 on Mr Liu的博客</title>
-    <link>https://www.mrliu1024.top/tags/%E9%A3%9E%E5%B8%B8%E5%87%86/</link>
+    <link>http://localhost:1313/tags/%E9%A3%9E%E5%B8%B8%E5%87%86/</link>
     <description>Recent content in 飞常准 on Mr Liu的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2023 - 2026 [Mr Liu](/about/)</copyright>
-    <lastBuildDate>Tue, 17 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="https://www.mrliu1024.top/tags/%E9%A3%9E%E5%B8%B8%E5%87%86/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 17 Dec 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E9%A3%9E%E5%B8%B8%E5%87%86/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>SDR软件无线电之ADS-B信号接收与上传至飞常准教程</title>
-      <link>https://www.mrliu1024.top/posts/sdr-adsb-feeyo/</link>
+      <link>http://localhost:1313/posts/sdr-adsb-feeyo/</link>
       <pubDate>Tue, 17 Dec 2024 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/posts/sdr-adsb-feeyo/</guid>
+      <guid>http://localhost:1313/posts/sdr-adsb-feeyo/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://www.mrliu1024.top/posts/sdr-adsb-feeyo/feature-sdr-adsb-feeyo-success.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/sdr-adsb-feeyo/feature-sdr-adsb-feeyo-success.webp" />
     </item>
     
   </channel>

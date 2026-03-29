@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>教程 on Mr Liu的博客</title>
-    <link>https://www.mrliu1024.top/tags/%E6%95%99%E7%A8%8B/</link>
+    <link>http://localhost:1313/tags/%E6%95%99%E7%A8%8B/</link>
     <description>Recent content in 教程 on Mr Liu的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2023 - 2026 [Mr Liu](/about/)</copyright>
-    <lastBuildDate>Tue, 21 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.mrliu1024.top/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 21 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/%E6%95%99%E7%A8%8B/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Klipper教程——自动调平：Euclid Probe组装和配置</title>
-      <link>https://www.mrliu1024.top/posts/euclid-probe-auto-leveling/</link>
+      <link>http://localhost:1313/posts/euclid-probe-auto-leveling/</link>
       <pubDate>Tue, 21 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/posts/euclid-probe-auto-leveling/</guid>
+      <guid>http://localhost:1313/posts/euclid-probe-auto-leveling/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://www.mrliu1024.top/posts/euclid-probe-auto-leveling/feature-euclid-probe.webp" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/euclid-probe-auto-leveling/feature-euclid-probe.webp" />
     </item>
     
   </channel>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>VPS on Mr Liu的博客</title>
-    <link>https://www.mrliu1024.top/categories/vps/</link>
+    <link>http://localhost:1313/categories/vps/</link>
     <description>Recent content in VPS on Mr Liu的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
     <copyright>© 2023 - 2026 [Mr Liu](/about/)</copyright>
-    <lastBuildDate>Sat, 11 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://www.mrliu1024.top/categories/vps/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 11 Nov 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/vps/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>阿里云高校计划——云工开物：大学生 300 元无门槛代金券白嫖与避坑指南</title>
-      <link>https://www.mrliu1024.top/posts/aliyun-student-discount/</link>
+      <link>http://localhost:1313/posts/aliyun-student-discount/</link>
       <pubDate>Sat, 11 Nov 2023 00:00:00 +0000</pubDate>
       
-      <guid>https://www.mrliu1024.top/posts/aliyun-student-discount/</guid>
+      <guid>http://localhost:1313/posts/aliyun-student-discount/</guid>
       <description></description>
-      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="https://www.mrliu1024.top/posts/aliyun-student-discount/feature-aliyun-official-website.png" />
+      <media:content xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:1313/posts/aliyun-student-discount/feature-aliyun-official-website.png" />
     </item>
     
   </channel>

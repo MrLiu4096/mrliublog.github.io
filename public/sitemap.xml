@@ -3,61 +3,61 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
 
   <url>
-    <loc>https://www.mrliu1024.top/</loc>
+    <loc>http://localhost:1313/</loc>
     <lastmod>2026-03-28T14:46:41+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.mrliu1024.top/about/</loc>
+    <loc>http://localhost:1313/about/</loc>
     <lastmod>2026-03-28T14:46:41+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.mrliu1024.top/posts/</loc>
+    <loc>http://localhost:1313/posts/</loc>
     <lastmod>2026-03-10T10:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.mrliu1024.top/posts/my-first-web/</loc>
+    <loc>http://localhost:1313/posts/my-first-web/</loc>
     <lastmod>2026-03-10T10:00:00+08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.mrliu1024.top/posts/chromebook-audio-driver-on-windows/</loc>
+    <loc>http://localhost:1313/posts/chromebook-audio-driver-on-windows/</loc>
     <lastmod>2024-12-28T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.mrliu1024.top/posts/sdr-adsb-feeyo/</loc>
+    <loc>http://localhost:1313/posts/sdr-adsb-feeyo/</loc>
     <lastmod>2024-12-17T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.mrliu1024.top/posts/quansheng-uv-k5-firmware-flash/</loc>
+    <loc>http://localhost:1313/posts/quansheng-uv-k5-firmware-flash/</loc>
     <lastmod>2023-11-25T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.mrliu1024.top/posts/euclid-probe-auto-leveling/</loc>
+    <loc>http://localhost:1313/posts/euclid-probe-auto-leveling/</loc>
     <lastmod>2023-11-21T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.mrliu1024.top/posts/aliyun-student-discount/</loc>
+    <loc>http://localhost:1313/posts/aliyun-student-discount/</loc>
     <lastmod>2023-11-11T00:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://www.mrliu1024.top/links/</loc>
+    <loc>http://localhost:1313/links/</loc>
     <changefreq>daily</changefreq>
     <priority>0.5</priority>
   </url>

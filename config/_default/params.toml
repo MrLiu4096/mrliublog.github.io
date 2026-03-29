@@ -50,7 +50,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"     # Forgejo 托管服务
   showScrollToTop = true                  # 是否在页面右下角显示“回到顶部”的悬浮按钮
 
 [homepage]                                # -- 博客主页设置 --
-  layout = "background"                         # 主页排版模式。有效选项：page (普通), profile (个人名片卡，类似 Stack), hero (巨幕介绍), card (文章卡片瀑布流), background (全屏背景图), custom (完全自定义)
+  layout = "background"                   # 主页排版模式。有效选项：page (普通), profile (个人名片卡，类似 Stack), hero (巨幕介绍), card (文章卡片瀑布流), background (全屏背景图), custom (完全自定义)
   homepageImage = "img/background-light.webp"    # 主页的大图（当布局设为 hero 或 card 时生效）
   showRecent = true                       # 是否在主页展示最新文章列表
   showRecentItems = 10                    # 如果将 showRecent 设置为 true，此参数用于显示多少篇文章，如果没有设置或者为0，则默认显示5篇文章。
@@ -59,7 +59,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"     # Forgejo 托管服务
   cardView = false                        # 将列表展示为卡片容器
   cardViewScreenWidth = false             # 增强列表中卡片的宽度，使其可以占据可用的全部宽度
   layoutBackgroundBlur = false            # 向下滚动主页时，是否模糊背景图
-  disableHeroImageFilter = false          # 主页背景是否套用图片滤镜
+  disableHeroImageFilter = true           # 主页背景是否套用图片滤镜
 
 [article]                                 # -- 单篇文章内页设置 --
   showDate = true                         # 是否在标题下方显示发布日期
