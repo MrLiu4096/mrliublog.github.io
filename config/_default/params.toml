@@ -64,7 +64,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"     # Forgejo 托管服务
 [article]                                 # -- 单篇文章内页设置 --
   showDate = true                         # 是否在标题下方显示发布日期
   showViews = true                        # 是否显示阅读次数（需配合第三方平台如 Firebase）
-  showLikes = true                        # 是否显示点赞数
+  showLikes = false                       # 是否显示点赞数
   showDateOnlyInArticle = false           # 是否仅在文章详情内显示日期（在外部卡片列表中不显示日期）
   showDateUpdated = false                 # 如果文章被修改过，是否显示最后更新的日期
   showAuthor = false                      # 是否显示作者名字
