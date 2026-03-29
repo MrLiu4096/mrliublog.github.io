@@ -38,7 +38,6 @@ jobs:
         run: hugo --minify
 
       - name: Upload artifact
-        # 升级到 v3，配合 actions/deploy-pages@v4
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
@@ -53,6 +52,8 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-        - name: IndexNow Snippet
-    run: |
-      curl -k "https://www.bing.com/indexnow?url=https://www.mrliu1024.top/&key=0723c3e47cd74fe99dfbe1a4ac243e97"
+
+      # 这一步要在部署完成后执行
+      - name: IndexNow Snippet
+        run: |
+          curl -k "https://www.bing.com/indexnow?url=https://www.mrliu1024.top/&key=0723c3e47cd74fe99dfbe1a4ac243e97"
