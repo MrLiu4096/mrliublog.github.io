@@ -54,11 +54,57 @@ jobs:
         uses: actions/deploy-pages@v4
 
       # 这一步要在部署完成后执行
-      - name: Submit to IndexNow
-        uses: bojand/gh-action-indexnow@v1
-        with:
-          endpoint: api.indexnow.org
-          location: https://www.mrliu1024.top/
-          key: 0723c3e47cd74fe99dfbe1a4ac243e97 # 你的 Key
-          # 如果你的 sitemap 叫其他名字，请修改下行
-          url_list: https://www.mrliu1024.top/sitemap.xml
+      - name: Parse Sitemap and Submit to IndexNow
+        run: |
+          cat << 'EOF' > submit_indexnow.py
+          import urllib.request
+          import json
+          import xml.etree.ElementTree as ET
+
+          # 配置信息
+          sitemap_url = 'https://www.mrliu1024.top/sitemap.xml'
+          host = 'www.mrliu1024.top'
+          key = '0723c3e47cd74fe99dfbe1a4ac243e97'
+          key_location = f'https://{host}/{key}.txt'
+
+          try:
+              # 1. 下载 Sitemap
+              print(f"正在获取 Sitemap: {sitemap_url}")
+              req = urllib.request.Request(sitemap_url, headers={'User-Agent': 'Mozilla/5.0'})
+              with urllib.request.urlopen(req) as response:
+                  xml_data = response.read()
+
+              # 2. 解析 XML，提取所有 URL
+              root = ET.fromstring(xml_data)
+              # 忽略命名空间，直接查找 loc 标签
+              urls = [elem.text for elem in root.iter() if 'loc' in elem.tag]
+              
+              print(f"成功提取到 {len(urls)} 个链接。")
+
+              # 3. 发送 POST 请求给 IndexNow
+              if urls:
+                  payload = {
+                      "host": host,
+                      "key": key,
+                      "keyLocation": key_location,
+                      "urlList": urls
+                  }
+                  data = json.dumps(payload).encode('utf-8')
+                  post_req = urllib.request.Request(
+                      'https://api.indexnow.org/IndexNow', 
+                      data=data, 
+                      headers={'Content-Type': 'application/json; charset=utf-8'}, 
+                      method='POST'
+                  )
+                  
+                  with urllib.request.urlopen(post_req) as post_res:
+                      print(f"IndexNow 批量提交成功！HTTP 状态码: {post_res.getcode()}")
+              else:
+                  print("警告：Sitemap 中没有找到任何链接。")
+
+          except Exception as e:
+              print(f"执行过程中发生错误: {e}")
+          EOF
+          
+          # 运行生成的 Python 脚本
+          python3 submit_indexnow.py
