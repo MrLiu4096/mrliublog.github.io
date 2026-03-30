@@ -54,6 +54,11 @@ jobs:
         uses: actions/deploy-pages@v4
 
       # 这一步要在部署完成后执行
-      - name: IndexNow Snippet
-        run: |
-          curl -k "https://www.bing.com/indexnow?url=https://www.mrliu1024.top/&key=0723c3e47cd74fe99dfbe1a4ac243e97"
+      - name: Submit to IndexNow
+        uses: bojand/gh-action-indexnow@v1
+        with:
+          endpoint: api.indexnow.org
+          location: https://www.mrliu1024.top/
+          key: 0723c3e47cd74fe99dfbe1a4ac243e97 # 你的 Key
+          # 如果你的 sitemap 叫其他名字，请修改下行
+          url_list: https://www.mrliu1024.top/sitemap.xml
