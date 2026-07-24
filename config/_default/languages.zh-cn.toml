@@ -1,0 +1,83 @@
+disabled = false                            # 是否禁用该语言（单语言博客必须为 false）
+languageCode = "zh-cn"                      # 语言代码，与基础配置中的 defaultContentLanguage 对应
+languageName = "简体中文"                    # 语言的显示名称（多语言网站切换器里显示的名字）
+weight = 1                                  # 语言的排序权重
+title = "Mr Liu的博客"                       # 网站的主标题，会显示在浏览器标签页、顶部导航栏和搜索引擎结果中
+
+[params]
+  displayName = "简中"                      # 语言的简短显示名称
+  isoCode = "zh-cn"                         # 用于网页底层 HTML 标签规范的 ISO 语言代码
+  rtl = false                               # 文字阅读方向是否为“从右向左”（中文必须为 false）
+  
+  # 全站默认的日期显示格式。
+  # 注意：Hugo 底层使用 Go 语言，它的时间占位符非常奇葩，必须严格使用 "2006" 代表年，"01" 代表月，"02" 代表日。千万不要改成 YYYY-MM-DD。
+  dateFormat = "2006-01-02" 
+  
+  # logo = "img/avatar.webp"                                      # 网站的 Logo 图片路径（放在静态资源文件夹 assets/img 或 static/img 下）
+  # secondaryLogo = "img/secondary-logo.png"                      # 备用 Logo（比如在暗色模式下自动切换为白色的 Logo）
+  description = "记录摄影随拍与数码折腾日常"                        # 网站的 SEO 描述，别人在搜索引擎里看到的网站简介
+  copyright = "© 2023 - { year } [Mr Liu](/about/)"               # 自定义页脚的版权声明，支持 Markdown 语法和 Emoji 表情
+
+[params.author]
+   name = "Mr Liu" # 你的名字，会展示在主页个人名片、文章作者栏和关于页面
+#  email = "youremail@example.com" # 你的公开联系邮箱
+   image = "img/avatar.webp" # 你的个人头像图片路径。用 WebP 格式很好，加载速度快
+   imageQuality = 96 # 头像图片在被主题自动处理和缩放时的压缩质量（0-100）
+   headline = "笔耕不辍，静候佳音" # 你的个人一句话签名，会加粗显示在主页头像的下方
+#  bio = "喜欢拍拍照、瞎折腾软硬件。家里有一只一岁的三花主子。" # 你的详细个人简介，显示在一句话签名的下方
+
+#  links = [ # 你的社交链接数组。只要取消注释并填入你的个人主页链接，主页头像下方就会自动生成漂亮的社交图标！
+#    { email = "mailto:hello@your_domain.com" }, # 点击直接发送邮件
+#    { github = "https://github.com/你的用户名" }, # GitHub 主页
+#    { twitter = "https://twitter.com/你的用户名" },
+#    { instagram = "https://instagram.com/你的用户名" },
+#    { telegram = "https://t.me/你的用户名" },
+#    # ... 下面这些是 Blowfish 原生支持图标的其他社交平台，你需要哪个就取消注释哪个 ...
+#    # { link = "https://link-to-some-website.com/" }, # 默认的通用链接图标
+#    # { amazon = "https://www.amazon.com/hz/wishlist/ls/wishlist-id" },
+#    # { apple = "https://www.apple.com" },
+#    # { blogger = "https://username.blogspot.com/" },
+#    # { bluesky = "https://bsky.app/profile/username" },
+#    # { codepen = "https://codepen.io/username" },
+#    # { dev = "https://dev.to/username" },
+#    # { discord = "https://discord.gg/invitecode" },
+#    # { dribbble = "https://dribbble.com/username" },
+#    # { facebook = "https://facebook.com/username" },
+#    # { flickr = "https://www.flickr.com/photos/username/" },
+#    # { foursquare = "https://foursquare.com/username" },
+#    # { gitlab = "https://gitlab.com/username" },
+#    # { google = "https://www.google.com/" },
+#    # { hashnode = "https://username.hashnode.dev" },
+#    # { itch-io = "https://username.itch.io" },
+#    # { keybase = "https://keybase.io/username" },
+#    # { keyoxide = "https://keyoxide.org/URI" },
+#    # { kickstarter = "https://www.kickstarter.com/profile/username" },
+#    # { lastfm = "https://lastfm.com/user/username" },
+#    # { linkedin = "https://linkedin.com/in/username" },
+#    # { mastodon = "https://mastodon.instance/@username" },
+#    # { matrix = "https://matrix.to/#/URI" },
+#    # { medium = "https://medium.com/username" },
+#    # { microsoft = "https://www.microsoft.com/" },
+#    # { orcid = "https://orcid.org/userid" },
+#    # { patreon = "https://www.patreon.com/username" },
+#    # { pinterest = "https://pinterest.com/username" },
+#    # { reddit = "https://reddit.com/user/username" },
+#    # { researchgate = "https://www.researchgate.net/profile/username" },
+#    # { signal = "https://signal.me/#eu/userid" },
+#    # { slack = "https://workspace.url/team/userid" },
+#    # { snapchat = "https://snapchat.com/add/username" },
+#    # { soundcloud = "https://soundcloud.com/username" },
+#    # { spotify = "https://open.spotify.com/user/userid" },
+#    # { stack-overflow = "https://stackoverflow.com/users/userid/username" },
+#    # { steam = "https://steamcommunity.com/profiles/userid" },
+#    # { threads = "https://www.threads.net/@username" },
+#    # { tiktok = "https://tiktok.com/@username" },
+#    # { tumblr = "https://username.tumblr.com" },
+#    # { twitch = "https://twitch.tv/username" },
+#    # { x-twitter = "https://twitter.com/username" },
+#    # { whatsapp = "https://wa.me/phone-number" },
+#    # { youtube = "https://youtube.com/username" },
+#    # { ko-fi = "https://ko-fi.com/username" },
+#    # { codeberg = "https://codeberg.org/username"},
+#    # { printables = "https://www.printables.com/@username"},
+#  ]
