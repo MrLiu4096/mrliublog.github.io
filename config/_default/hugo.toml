@@ -3,7 +3,7 @@
 # https://blowfish.page/docs/getting-started/
 
 theme = "blowfish"                            # 启用的主题名称
-baseURL = "https://www.ljx1.com/"        # 你的博客绑定的正式域名
+baseURL = "https://www.ljx1.com/"             # 你的博客绑定的正式域名
 defaultContentLanguage = "zh-cn"              # 默认语言设为简体中文，确保主题界面文本（如日期、提示语）显示为中文
 
 pluralizeListTitles = "false"                 # 强烈建议中文博客设为false。Hugo的列表标题复数化功能，设为true会导致Hugo强行给中文分类加英文复数后缀。详细了解：https://gohugo.io/getting-started/configuration/#pluralizelisttitles
