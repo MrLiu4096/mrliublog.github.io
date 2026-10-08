@@ -62,6 +62,7 @@ forgejoDefaultServer = "https://v11.next.forgejo.org"     # Forgejo 托管服务
   disableHeroImageFilter = true           # 主页背景是否套用图片滤镜
 
 [article]                                 # -- 单篇文章内页设置 --
+  fullWidth = true                        # 撑开正文与大屏显示空间（解决表格/正文局促问题）
   showDate = true                         # 是否在标题下方显示发布日期
   showViews = true                        # 是否显示阅读次数（需配合第三方平台如 Firebase）
   showLikes = false                       # 是否显示点赞数
