@@ -1,294 +1,107 @@
 ﻿+++
-title = "Chromebook刷Windows后安装声卡驱动"
+title = "Chromebook 刷 Windows 后安装 Coolstar 声卡驱动与避坑指南"
 date = 2024-12-28
-description = "在 Chromebook 刷 Windows 后，教你安装 Coolstar 声卡驱动的完整流程，含 BIOS 设置、UWD 与 Type-C 驱动步骤。"
+description = "详解 Chromebook 改装 Windows 10/11 后解决无声问题的完整方案，涵盖 Tianocore EDK2 固件调优、Testsigning 签名绕过、UWD 框架部署与音频总线 INF 手动注入。"
 categories = ["Chromebook", "教程"]
-tags = ["Chromebook", "Windows", "驱动"]
+tags = ["Chromebook", "Windows", "驱动", "Coolstar", "硬件改装"]
 +++
 
-## 文章概述
+> **摘要**：通过 MrChromebox 等固件将 Chromebook 刷入完整 UEFI 并安装 Windows 后，声卡失效是最普遍的痛点。本文深入剖析 ChromeOS 专有音频总线与 Windows 驱动架构冲突的底层根源，并提供禁用 Secure Boot、开启测试签名、部署 UWD 框架及手动注入 INF 驱动的完整实操与排错指南。
 
-Chromebook 刷 Windows 后最常见的问题是**声卡无法识别**，导致无法发声。这是因为 Chromebook 原生采用 ARM 或特殊的 x86 硬件，Windows 官方未适配其驱动。幸运的是，开源社区中的 Coolstar 团队提供了免费的音频驱动解决方案。本文将逐步教你如何安装这个驱动，恢复声卡功能。
+## 为什么改装 Windows 后声卡会失效？
 
-## 为什么 Chromebook 需要安装驱动？
+Chromebook 原生运行的 ChromeOS 与传统 Windows PC 在音频架构设计上存在本质差异：
 
-### Chromebook 硬件的特殊性
-
-Chromebook 原生使用 Chrome OS，期间配套的音频芯片（通常是 Intel HDA 或高端��片）缺乏标准 Windows 驱动。刷 Windows 后，系统无法自动识别这些硬件，甚至被分类为"未知设备"。
-
-### Windows 官方不支持
-
-由于 Chromebook 是小众设备，微软官方不会为其开发驱动。因此需要借助第三方社区（如 Coolstar）的努力，通过破解与适配来实现兼容。
-
-### 关键步骤概览
-
-- **关闭安全启动** → 允许加载未签名驱动
-- **安装 UWD（Universal Windows Driver 基础框架）** → 提供驱动运行环境
-- **关闭驱动签名验证** → 使用破解驱动
-- **安装声卡驱动** → 识别硬件并恢复音频功能
+* **非标准音频总线拓扑**：传统 PC 多采用通用 Intel High Definition Audio (HDA) 标准，而现代 Chromebook 广泛采用轻量化、高集成的 **Intel SST (Smart Sound Technology)** 或 **MIPI SoundWire** 总线，音频编解码器（如 Realtek ALC5682、Maxim 98357A 等）直接挂载在 SOC 的 DSP 数字信号处理器上。
+* **缺少微软通用 WHQL 驱动**：ChromeOS 依赖 Linux 内核中针对各主板代号（Board Overlay）定制的 ASoC 拓扑配置，微软官方更新库中并未包含此类 OEM 专用固件拓扑的签名驱动。
+* **驱动签名冲突**：开发者 Coolstar 等社区团队逆向重构了总线通信并开发了第三方驱动，但因属于非 WHQL 商业签名的测试驱动，Windows 内核驱动强制签名机制（Driver Signature Enforcement）会默认拦截加载。
 
 ---
 
-## 安装前的准备工作
+## 准备工作与前置环境
 
-### 系统与硬件要求
+在正式安装驱动前，请务必确认以下软硬件环境满足要求：
 
-- **操作系统**：Windows 10 或 Windows 11（建议 22H2+）
-- **权限**：管理员账户
-- **磁盘空间**：至少 500MB 空闲空间
-- **网络**：稳定网络连接（下载驱动包）
-- **兼容设备**：主要支持 Intel 第 10-12 代 CPU 的 Chromebook（如 HP C1030、Lenovo 系列）
-
-### 准备清单
-
-- 获取管理员权限
-- 备份重要数据
-- 关闭杀毒软件（避免误报）
-- 准备下载驱动文件
-- 留足安装时间（整个过程可能需要 20-30 分钟）
+* **系统版本**：Windows 10 / 11 64位（建议 22H2 及以上纯净原版系统，精简版可能精简了底层 AudioSrv 核心组件）。
+* **固件状态**：设备必须已解除硬件写保护（CR50 / WP 电阻 / 电池断开），并通过 MrChromebox 刷入完整 UEFI（Tianocore EDK2 引导，开机为兔子标志）。
+* **操作权限**：具备本地 Administrator 管理员权限。
+* **安全软件临时策略**：安装全程需**暂时关闭 Windows Defender 实时保护**或第三方杀毒软件，避免注入内核级 `.sys` 时被误报拦截。
+* **驱动包本地路径**：[高速分流下载地址](https://down.mrliu1024.top/download/Chromebook/Chroembook%E5%A3%B0%E5%8D%A1%E9%9B%B7%E7%94%B5%E9%A9%B1%E5%8A%A8_%E9%80%82%E7%94%A8%E4%BA%8E%E8%8B%B1%E7%89%B9%E5%B0%9410-12%E4%BB%A3CPU.zip)  
+  *建议解压至纯英文短路径（如 `C:\Drivers\`），避免脚本在解析含空格或中文字符路径时抛出异常。*
 
 ---
 
-## 完整安装教程
+## 安装效果预览
 
-### 预览安装效果
-
-先上一个安装好后的样子：
+成功加载驱动并完成拓扑端点绑定后，“设备管理器”中将正确识别系统总线控制器及音频终端：
 
 ![soundcard installed 1](soundcard_installed_1.webp)
 ![soundcard installed 2](soundcard_installed_2.webp)
 
-### 第一步：进入 BIOS 并关闭安全启动
+---
 
-1. 关机后重启，进入 BIOS 界面（通常按 `ESC` 或 `DEL` 或 `F2`）
-2. 找到 **Advanced Configuration** 或 **Security** 选项
-3. 定位 **Secure Boot**（安全启动）选项，将其设置为 **Disabled**（禁用）
-4. 保存并退出
+## 详细安装与配置步骤
 
-关闭安全启动的目的是允许 Windows 加载未签名的驱动程序（破解驱动）。
+### 第一步：进入 UEFI 固件关闭安全启动 (Secure Boot)
+
+必须在底层彻底关闭 Secure Boot，否则 Windows 内核将拒绝切换至测试签名状态。
+
+1. 冷机开机，在屏幕点亮且出现 Tianocore 兔子 Logo 瞬间，快速连续按 **ESC** 键（部分机型需按 **F2**）进入 BIOS/UEFI 菜单。
+2. 使用键盘方向键导航至 **Device Manager** → **Secure Boot Configuration**。
+3. 将 **Attempt Secure Boot** 选项更改为 **Disabled**（或取消勾选）。
+4. 按 **F10** 保存变更，按 **ESC** 退出并引导进入 Windows。
 
 ![edk2 main menu](edk2_main_menu.webp)
 
-### 第二步：获取并准备驱动文件
+### 第二步：常驻启用系统测试签名模式 (Testsigning)
 
-1. 下载驱动包：[下载地址](https://down.mrliu1024.top/download/Chromebook/Chroembook%E5%A3%B0%E5%8D%A1%E9%9B%B7%E7%94%B5%E9%A9%B1%E5%8A%A8_%E9%80%82%E7%94%A8%E4%BA%8E%E8%8B%B1%E7%89%B9%E5%B0%9410-12%E4%BB%A3CPU.zip)
-2. 若杀毒软件报毒，请**暂时关闭杀毒软件**再下载（这是假报，驱动本身安全）
-3. 解压到易于访问的位置（例如桌面或 `C:\Drivers\`）
+Windows 默认强制启用内核驱动签名校验，加载非 WHQL 驱动必须打开 BCD 测试通道。
 
-### 第三步：安装 UWD（通用 Windows 驱动框架）
+1. 右键点击“开始”菜单或按快捷键 Win + X，选择 **终端管理员** 或 **PowerShell (管理员)**。
+2. 运行如下命令：
 
-UWD 是驱动程序的运行基础框架，必须先安装。
+```cmd
+bcdedit /set testsigning on
+```
 
-1. 打开解压后的驱动文件夹
-2. 找到 **UWD** 相关的安装程序，双击运行
-3. 按照安装向导完成安装（**过程中需要重启计算机**）
-4. 重启后，打开驱动包验证安装效果（应显示类似下图）：
-
-![UWD 安装后界面](chroembook_uwd_install.webp)
-
-### 第四步：安装声卡驱动程序
-
-1. 打开驱动包中的 **Coolstar-audio-driver** 安装程序
-2. 点击"安装"按钮
-3. 若出现报错，**无需紧张**，试试以下方法：
-   - 再试几次（重复点击安装，有时网络波动导致）
-   - 检查是否以管理员身份运行
-   - 确保已关闭杀毒软件和防火墙
-
-### 第五步：卸载冲突驱动
-
-在安装破解驱动前，必须删除系统中的冲突驱动：
-
-1. 打开 **控制面板** → **程序和功能**（或 **设置** → **应用** → **应用和功能**）
-2. 查找以下两个驱动，逐一卸载：
-   - `csaudiointsof`
-   - `sklhdaudbus`
-3. 卸载时会提示重启，**暂时先不重启**，继续后续步骤
-
-### 第六步：关闭驱动签名验证
-
-这一步很关键，关闭签名验证才能加载破解驱动。
-
-1. **以管理员身份**打开"命令提示符"或"PowerShell"
-   - 按 `Win + X`，选择 **Windows Terminal (Admin)** 或 **Command Prompt (Admin)**
-2. 复制以下命令并粘贴，然后按 `Enter`：
-   ```sh
-   bcdedit /set testsigning on
-   ```
-3. 若操作成功，会显示：
-   ```
-   操作成功完成。
-   ```
+3. 终端返回“**操作成功完成**”即代表引导数据修改成功。
 
 ![bcdedit testsigning](cmd_bcdedit.webp)
 
-> ⚠️ **重要**：如果显示权限错误，请确认是以管理员身份打开的命令行工具。
+> ⚠️ **核心避坑机制**：
+> * 重启后屏幕右下角展示“测试模式 (Test Mode)”水印属正常状态。
+> * **切勿手动执行 `testsigning off`**。该驱动并不具备微软数字证书，一旦关闭测试通道，下次重启时驱动将直接被阻止运行，音频设备会再次离线。
 
-### 第七步：安装破解声卡驱动
+### 第三步：彻底清理系统冲突与残留驱动
 
-1. 返回驱动文件夹，找到 **"声卡破解"** 或 **"Audio Driver"** 文件夹
-2. 其中包含两个 `.inf` 文件：
-   - `csaudiointcsof.inf`
-   - `csaudiointcsof.inf`（注：两个文件名可能相同，均需安装）
-3. **右键点击第一个文件** → **安装驱动程序**
-4. 按照提示完成安装
-5. **重复**对第二个文件执行相同操作
-6. 安装完成后**重启计算机**
+若系统先前通过 Windows Update 自动拉取了微软的通用兼容驱动，可能造成设备 ID 抢占：
 
-### 第八步：安装 Type-C / 雷电驱动（可选）
+1. 进入系统 **设置** → **应用** → **安装的应用**。
+2. 检索并卸载包含以下名称开头的软件包：
+   * `csaudiointsof`
+   * `sklhdaudbus`
+3. 卸载提示重启时，选择“稍后重启”，继续执行后续步骤。
 
-如果你的 Chromebook 支持 Type-C 或 Thunderbolt 连接，可选择安装：
+### 第四步：部署 UWD (Universal Windows Driver) 基础框架
 
-1. 打开驱动文件夹中的 **"Type-C 驱动"** 子目录
-2. 找到以下两个 `.inf` 文件：
-   - `inteltcss.inf`
-   - `intelpmc.inf`
-3. 分别右键安装（步骤同第七步）
-4. 根据 BIOS 提示重启（如果有）
+UWD 框架提供了驱动与系统音频服务交互的核心支持库。
 
-> **注意**：我测试的 HP C1030 不支持雷电，所以 Type-C 驱动可用性因设备而异。建议先安装音频驱动，若 Type-C 需要再补装。
+1. 打开解压后的驱动目录，定位至 **UWD** 文件夹。
+2. 右键点击安装程序，选择 **“以管理员身份运行”**。
+3. 保持默认配置安装完成。
+4. **安装完成后请立即重启一次系统**，确保底层支持服务完全装载。
 
----
+![UWD 安装后界面](chroembook_uwd_install.webp)
 
-## 常见问题排查
+### 第五步：运行 Coolstar 主驱动程序
 
-### 问题 1：安装后仍无声音
+1. 进入解压目录下的 **Coolstar-audio-driver** 安装程序目录。
+2. 右键以管理员身份运行安装向导，点击 **Install** 进行注入。
+3. 若弹出网络请求超时或脚本中断提示，请确认防病毒软件已退出，重试安装即可。
 
-**症状**：设备管理器已识别声卡，但播放无声
+### 第六步：手动注入声卡 INF 设备描述文件
 
-**解决方案**：
-1. 打开 **设备管理器**（`Win + X` → 设备管理器）
-2. 展开 **音频输入和输出**，查看声卡状态
-3. 若显示 ❌（设备错误），查看详细错误代码
-4. 常见错误与解决：
-   - **代码 10（STATUS_DEVICE_POWER_FAILURE）**：驱动加载失败，重启即可
-   - **其他错误**：更新 BIOS 或尝试重装驱动
+若主程序安装后系统仍显示“无音频输出设备”，需手动通过设备安装信息文件向系统注册端点：
 
-### 问题 2：显示"许可证冲突"错误
-
-**症状**：安装驱动时提示 `{许可证冲突} 系统检测到你的注册产品类型有篡改现象`
-
-**原因**：驱动签名验证未正确关闭
-
-**解决方案**：
-1. 重新执行**第六步**的命令
-2. 使用 PowerShell 验证状态：
-   ```powershell
-   bcdedit /enum | grep testsigning
-   ```
-   应显示 `testsigning Yes`
-3. 若未生效，尝试重启后重新执行第六步
-
-### 问题 3：杀毒软件阻止驱动安装
-
-**症状**：安装时被 Windows Defender 或其他杀毒软件中断
-
-**解决方案**：
-1. **临时关闭**杀毒软件（完成安装后再开启）
-2. 如果是 Windows Defender，可在"病毒和威胁防护"中添加驱动文件夹为例外
-3. 重新尝试安装驱动
-
-### 问题 4：无法进入 BIOS
-
-**症状**：按 ESC / F2 / DEL 等都进不了 BIOS
-
-**解决方案**：
-- 不同品牌 Chromebook 快捷键不同，常见的有：
-  - **HP**：`ESC` 或 `F10`
-  - **Lenovo**：`F1` 或 `DEL`
-  - **ASUS**：`F2` 或 `DEL`
-  - **Dell**：`F2` 或 `F12`
-- 可查阅你的 Chromebook 型号对应的用户手册
-
----
-
-## 重要注意事项与风险提示
-
-### ⚠️ 关键警告
-
-1. **驱动签名关闭的安全性**：关闭签名验证会降低系统安全性，可能增加恶意驱动的风险。建议仅在必要时启用 Testsigning 模式，安装完成后酌情启用回来。
-2. **不可逆操作**：更改 BIOS 设置后，如果刷回 Chrome OS，部分定制参数可能丢失。
-3. **系统损坏风险**：极少情况下，驱动冲突可能导致蓝屏或无法启动。建议先创建系统还原点。
-
-### ✅ 最佳实践
-
-1. **备份数据**：安装前备份重要文件
-2. **创建系统还原点**：
-   ```
-   Win + R → rstrui.exe → 创建还原点
-   ```
-3. **迭代验证**：每完成一步骤，检查系统是否正常
-4. **记录命令**：保存第六步的 `bcdedit` 命令，便于日后参考
-5. **及时更新**：定期检查 Coolstar 官网是否发布新版驱动
-
-### 📋 卸载驱动（若需要回滚）
-
-如果需要卸载驱动并恢复原状：
-
-```powershell
-# 重新启用驱动签名验证
-bcdedit /set testsigning off
-
-# 在控制面板中卸载 Coolstar 驱动
-# 设置 → 应用 → 应用和功能 → 搜索 Coolstar → 卸载
-```
-
-重启后即可恢复。
-
----
-
-## 推荐配置与兼容性
-
-### 已测试兼容设备
-
-- ✅ **HP C1030**：完美支持（部分型号音频效果最佳）
-- ✅ **Lenovo Yoga Chromebook**：支持
-- ✅ **ASUS Chromebook**：大多数型号支持
-- ❓ **Dell Chromebook**：需自行验证
-
-### 处理器代数支持
-
-驱动包主要适配 **Intel 第 10-12 代 CPU** 的 Chromebook：
-- Intel Core i3/i5/i7 10 代及以上
-- Intel Pentium/Celeron N5000/N6000 系列
-
-### 音质表现
-
-| 驱动版本 | 音质等级 | 备注 |
-|---------|--------|------|
-| 最新版  | ⭐⭐⭐⭐ | 支持立体声和环绕音 |
-| 旧版本  | ⭐⭐⭐   | 基础音频功能 |
-
----
-
-## 总结与后续
-
-### 你现在已拥有
-
-✅ 正常的音频输出  
-✅ 可以播放视频、音乐  
-✅ 支持在线会议音频  
-✅ 系统声音提示恢复  
-
-### 后续可尝试
-
-- 调整音量和音频设置（设置 → 声音）
-- 安装音频增强程序（如 Equalizer APO）
-- 定期检查驱动更新
-
-### 获取帮助
-
-如果遇到仍未解决的问题：
-
-1. **查阅 Coolstar 官网**：[https://coolstar.org/chromebook/](https://coolstar.org/chromebook/driverlicense/login.html)
-2. **搜索社区讨论**：在 Reddit 的 r/Chromebook 提问
-3. **本文反馈**：在评论区分享你的设备型号和问题描述
-
----
-
-## 致谢
-
-> **感谢** Coolstar 团队以及所有无偿分享驱动文件与技术支持的开源社区贡献者。  
-> 本文分享仅供学习和测试之用，若需商用或解除署名限制，请前往 [Coolstar 官网](https://coolstar.org/chromebook/driverlicense/login.html) 获取正版支持。
-
----
+1. 进入驱动包中的 **“声卡破解”**（或 **Audio Driver**）子目录。
+2. 找到总线与音频端点的 `.inf` 配置文件
